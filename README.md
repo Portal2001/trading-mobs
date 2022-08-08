@@ -6,3 +6,5 @@ https://www.planetminecraft.com/data-pack/minecraft-but-you-can-trade-with-mobs/
 
 mobs supported:-
 1. pig
+2. spider
+3. iron_golem
