@@ -8,3 +8,5 @@ mobs supported:-
 1. pig
 2. spider
 3. iron_golem
+4. cow
+5. bat
