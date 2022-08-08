@@ -1,0 +1,137 @@
+{
+  "plugin.dependencies": "",
+  "plugin.load-before": "",
+  "plugin.version": "0.2beta",
+  "debug-build-mode": false,
+  "open-tab": 0,
+  "plugin-components": [
+    {"=": "comp-plugin-enable"},
+    {"=": "comp-plugin-disable"},
+    {
+      "children": [
+        {
+          "children": [
+            {
+              "=": "stat-set-local-variable",
+              "parameters": [
+                "pig",
+                {
+                  "=": "org.bukkit.Bukkit#createMerchant(java.lang.String)",
+                  "parameters": [{
+                    "=": "expr-string",
+                    "parameters": ["pig"]
+                  }]
+                }
+              ]
+            },
+            {
+              "=": "stat-set-local-variable",
+              "parameters": [
+                "trade1",
+                {
+                  "=": "org.bukkit.inventory.MerchantRecipe#MerchantRecipe(org.bukkit.inventory.ItemStack,int)",
+                  "parameters": [
+                    {
+                      "=": "org.bukkit.inventory.ItemStack#ItemStack(org.bukkit.Material,int)",
+                      "parameters": [
+                        {"=": "org.bukkit.Material#GOLDEN_CARROT"},
+                        {
+                          "=": "expr-number",
+                          "parameters": ["10"]
+                        }
+                      ]
+                    },
+                    {
+                      "=": "expr-number",
+                      "parameters": ["10"]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "=": "org.bukkit.inventory.MerchantRecipe#addIngredient(org.bukkit.inventory.ItemStack)",
+              "parameters": [
+                {
+                  "=": "expr-local-variable",
+                  "parameters": ["trade1"]
+                },
+                {
+                  "=": "org.bukkit.inventory.ItemStack#ItemStack(org.bukkit.Material,int)",
+                  "parameters": [
+                    {"=": "org.bukkit.Material#EMERALD"},
+                    {
+                      "=": "expr-number",
+                      "parameters": ["1"]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "=": "org.bukkit.inventory.Merchant#setRecipes(java.util.List<org.bukkit.inventory.MerchantRecipe>)",
+              "parameters": [
+                {
+                  "=": "expr-local-variable",
+                  "parameters": ["pig"]
+                },
+                {
+                  "size": 1,
+                  "=": "expr-new-list",
+                  "parameters": [{
+                    "=": "expr-local-variable",
+                    "parameters": ["trade1"]
+                  }]
+                }
+              ]
+            },
+            {
+              "=": "org.bukkit.entity.HumanEntity#openMerchant(org.bukkit.inventory.Merchant,boolean)",
+              "parameters": [
+                {"=": "org.bukkit.event.player.PlayerInteractEntityEvent#getPlayer()"},
+                {
+                  "=": "expr-local-variable",
+                  "parameters": ["pig"]
+                },
+                {
+                  "=": "expr-boolean",
+                  "parameters": ["true"]
+                }
+              ]
+            }
+          ],
+          "=": "stat-if-statement",
+          "parameters": [
+            {
+              "=": "expr-is-equal",
+              "parameters": [
+                {
+                  "=": "org.bukkit.entity.Entity#getType()",
+                  "parameters": [{"=": "org.bukkit.event.player.PlayerInteractEntityEvent#getRightClicked()"}]
+                },
+                {"=": "org.bukkit.entity.EntityType#PIG"}
+              ]
+            },
+            "normal"
+          ]
+        },
+        {"=": "stat-else-statement"}
+      ],
+      "=": "org.bukkit.event.player.PlayerInteractEntityEvent",
+      "parameters": ["NORMAL"]
+    }
+  ],
+  "plugin.soft-dependencies": "",
+  "plugin.name": "tradingmobs",
+  "plugin.prefix": "",
+  "current-plugin-component": 0,
+  "plugin.author": "portal2001",
+  "plugin.description": "minecarft but every mob trades",
+  "plugin.permissions": "",
+  "open-plugin-components": [
+    2,
+    0,
+    1
+  ],
+  "plugin.website": ""
+}

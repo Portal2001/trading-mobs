@@ -1,0 +1,8 @@
+name: "tradingmobs"
+version: "0.2beta"
+main: "vb.$tradingmobs.PluginMain"
+api-version: 1.13
+authors: [portal2001]
+description: "minecarft but every mob trades"
+commands:
+permissions:
