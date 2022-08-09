@@ -10,3 +10,10 @@ mobs supported:-
 3. iron_golem
 4. cow
 5. bat
+6. bee
+7. salmon
+8. cod
+9. squid
+10. glow_squid
+11. chicken
+
