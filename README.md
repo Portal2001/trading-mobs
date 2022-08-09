@@ -16,4 +16,23 @@ mobs supported:-
 9. squid
 10. glow_squid
 11. chicken
+12. sheep
+13. enderman
+14. horse
+15. skeleton
+16. creeper
+17. spider
+18. witch
+19. hoglin
+20. piglin
+21. zombified piglin
+22. ghast
+23. blaze
+24. wither_skeleton
+25. sliverfish
+supports 1.14 to 1.19
+tested in 1.19
 
+upcoming updates
+config options
+custom tools trade
