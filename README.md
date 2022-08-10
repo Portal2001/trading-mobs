@@ -30,6 +30,7 @@ mobs supported:-
 23. blaze
 24. wither_skeleton
 25. sliverfish
+
 supports 1.14 to 1.19
 tested in 1.19
 
